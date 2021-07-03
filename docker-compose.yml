@@ -1,0 +1,26 @@
+version: "3.7"
+services:
+  redis:
+    restart: always
+    image: redis:6.0.9-buster
+    volumes:
+      - redis-data:/data
+    networks:
+      - asynq-example
+    ports:
+      - "6379:6379"
+  asynqmon:
+    restart: always
+    image: hibiken/asynqmon
+    networks:
+      - asynq-example
+    entrypoint: ["/asynqmon", "--redis-addr=redis:6379"]
+    ports:
+      - "8080:8080"
+
+networks:
+  asynq-example:
+    driver: bridge
+
+volumes:
+  redis-data:
