@@ -1,10 +1,10 @@
 # asynq-example
-This project is a simple example with asynq package which implements a distributed task queue in Go.
+This project is a simple example using the asynq package, which implements a distributed task queue in Go.
 
-There have three parts.
-* Worker: When a task is sent to a queue, consume the task and handle it.
-* Client: Simulate real users to send asynchronous task.
-* Beat: Period task, send the specific tasks automatically.
+There are three parts to this project:
+* Worker: When a task is sent to a queue, it consumes and handles the task.
+* Client: Simulate real users by sending asynchronous tasks.
+* Beat: Executes periodic tasks and automatically sends specific tasks.
 
 # How to use
 
